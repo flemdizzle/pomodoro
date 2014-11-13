@@ -5,7 +5,7 @@ gem 'devise'
 #add angular
 gem 'angularjs-rails', '~> 1.3.2'
 #heroku compatibility
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 #adding pry
 gem 'pry'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
