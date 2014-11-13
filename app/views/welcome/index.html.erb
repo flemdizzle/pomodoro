@@ -1,0 +1,9 @@
+<h1>Welcome to Pomodoro App</h1>
+<h2 class="tagline">Lalala</h2>
+<br/>
+<p>Insert whatever</p>
+<br/>
+<% if user_signed_in? %>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path %> to get started.
+<% end %>
