@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th>Task</th>
-      <th>Type</th>
+      <th>Category</th>
       <th>Complete</th>
       <th>User</th>
       <th>Team</th>
@@ -16,7 +16,7 @@
     <% @tasks.each do |task| %>
       <tr>
         <td><%= task.task %></td>
-        <td><%= task.type %></td>
+        <td><%= task.category %></td>
         <td><%= task.complete %></td>
         <td><%= task.user_id %></td>
         <td><%= task.team_id %></td>
