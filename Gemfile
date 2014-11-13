@@ -1,10 +1,17 @@
 source 'https://rubygems.org'
 
-
+#add devise
+gem 'devise'
+#add angular
+gem 'angularjs-rails', '~> 1.3.2'
+#heroku compatibility
+gem 'rails_12factor'
+#adding pry
+gem 'pry'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use postgres as the database for Active Record
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
