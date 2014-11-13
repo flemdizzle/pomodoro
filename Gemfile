@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 #add devise
-gem 'devise'
+gem 'devise', '3.4.1'
 #add angular
 gem 'angularjs-rails', '~> 1.3.2'
 #heroku compatibility
