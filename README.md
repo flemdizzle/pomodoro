@@ -13,6 +13,7 @@ Files composing the app can be found at [Lydia's GitHub] (https://github.com/lyd
 * Authentication by [Devise] (https://github.com/plataformatec/devise)
 * Testing with...
 
+
 ##User stories
 
 1) Visitors will arrive at landing page so that
