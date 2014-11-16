@@ -5,11 +5,17 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all
-    respond_with(@tasks)
+    respond_to do |format|
+      format.html
+      format.json { render json: @tasks }
+    end
   end
 
   def show
-    respond_with(@task)
+    respond_to do |format|
+      format.html
+      format.json { render json: @task }
+    end
   end
 
   def new
