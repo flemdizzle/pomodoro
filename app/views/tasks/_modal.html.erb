@@ -1,6 +1,5 @@
-<div ng-controller="ModalCtrl">
 <!-- Modal Begins Here -->
-  <div class="modal fade" id="myModal">
+  <div id="myModal" class="modal fade">
     <div class="modal-dialog">
       <div class="modal-content">
         <form id="modal-form">
@@ -9,10 +8,12 @@
           <h3 class="modal-title">Times Up!</h3>
         </div>
         <div class="modal-body">
+          <ul>
           <h4><bold>Completed:</bold></h4>
-          <li ng-repeat="task in checkedTasks">
-            {{task}}
+          <li ng-repeat="completed in tasks" type="none" ng-show="completed.complete === true"> 
+            {{completed.task}}
           </li>
+        </ul>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -24,4 +25,3 @@
   </div><!-- /.modal -->
 
   <button ng-click="loadChecked()" type="button" data-toggle="modal" data-target="#myModal">Launch modal</button>
-</div>
