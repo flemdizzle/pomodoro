@@ -1,18 +1,26 @@
 <div ng-app="taskApp">
   <div ng-controller="TaskListCtrl">
+      <p>Total number of tasks: {{tasks.length}}</p>
     <form name="taskForm" ng-submit="save()">
         <input type="text" ng-model="task.task"  size="30"
-               placeholder="add new task here">
-        <input class="btn-primary" type="submit" value="add">
-    </form>
+               placeholder="add new task here" type="submit">
+      <!-- <br>{{task.task}} -->
+    </form>    
     <ul>
-      <p>Total number of tasks: {{tasks.length}}</p>
-      <li ng-repeat="task in tasks">
+     <div ng-show="task.task.length > 0"> 
+           <li type="none">
+             <input type="checkbox">
+             <span>{{task.task}}</span>
+             <button ng-click="deleteTask(task.id)">&times;</button>
+           </li>
+           </div>
+      <li ng-repeat="task in tasks | orderBy : reverse" type="none">
+        <!-- This ng-click updates checked status -->
+        <input type="checkbox" value="{{task.id}}">
         <span>{{task.task}}</span>
-        <p>{{task.category}}</p>
-        <a href="" ng-click="deleteTask(task.id)", remote: true>Remove</a>
+        <button ng-click="deleteTask(task.id)">&times;</button>
       </li>
     </ul>
   </div>
 </div>
-<button id="refresh">Stuff</button>
+

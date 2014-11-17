@@ -57,7 +57,7 @@ myApp.controller("TaskListCtrl", ['$scope', '$resource', 'Tasks', 'Task', '$loca
                     task: $scope.task
                 });
                 $scope.tasks = Tasks.query();
-            // make it reset input to zero
+                $scope.task = {};
         };
 
     }
