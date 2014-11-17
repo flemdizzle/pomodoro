@@ -11,39 +11,37 @@ Files composing the app can be found at [Lydia's GitHub] (https://github.com/lyd
 * Ruby on Rails 4.1.6
 * PostgreSQL 9.3.5
 * Authentication by [Devise] (https://github.com/plataformatec/devise)
-* Testing with...
+* Testing Rspec, capybara, and Jasmine
 
 ##User stories
 
-1) Visitors will arrive at landing page so that
+1) Unauthorized users can use timer (data will not be saved) so that they can time how long they want to work or take a break.
 
-2) Visitors can use timer (data will not be saved) so that
+2) Unauthorized users can create tasks and mark them as completed (data will not be saved) so that so that they know what to work on.
 
-3) Visitors can create tasks (data will not be saved) so that
+3) Unauthorized users can create accounts, thus becoming "authorized users" so that their data will be saved.
 
-4) Visitors can create accounts, thus becoming "users" so that their data will be saved.
+4) Authorized users can log in or out of their accounts so that multiple users on one computer can use the application.
 
-5) Users can log in or out of their accounts so that multiple users on one computer can use the application.
+5) Authorized users can delete their accounts.
 
-6) Users can delete their accounts.
+6) Authorized users can create tasks and mark them as completed (data will be saved) so that they can track accomplishments achieved or not achieved during one pomodoro (unmarked tasks will be counted as incomplete).
 
-7) Users can create tasks and mark them as completed (data will be saved) so that they can track accomplishments achieved or not achieved during one pomodoro (unmarked tasks will be counted as incomplete).
+7) Authorized users can use timer (data will be saved) so that they can track their productivity (percentage of tasks completed) during one pomodoro.
 
-8) Users can use timer (data will be saved) so that they can track their productivity (percentage of tasks completed) during one pomodoro.
+8) Authorized users can log pomodoros (data will be saved) so that they can view their progress over time (that is, the number of pomodoros completed in a day/week/month/etc.).
 
-9) Users can log pomodoros (data will be saved) so that they can view their progress over time (that is, the number of pomodoros completed in a day/week/month/etc.).
+9) Authorized users can view percent of tasks completed over time so that they can track their progress and trends (see what time/days they are more or less productive).
 
-10) Users can view percent of tasks completed over time so that they can track their progress and trends (see what time/days they are more or less productive).
+10) Authorized users can view number of pomodoros completed over time so that they can track their progress and trends.
 
-11) Users can view number of pomodoros completed over time so that they can track their progress and trends.
+11) Authorized users can become team leaders with special permissions so that they can set tasks for users on their team.
 
-12) Users can become team leaders so that they can set tasks for users on their team.
+12) Team leaders can invite users to join their team so that users can pull tasks and so that team leader can track users' progress.
 
-13) Team leaders can invite users to join their team so that users can pull tasks and so that team leader can track users' progress.
+13) Team leaders can approve requests by users who wish to join their team so that users can pull tasks and so that team leader can track users' progress.
 
-14) Team leaders can approve requests by users who wish to join their team so that users can pull tasks and so that team leader can track users' progress.
-
-15) Users on a team can pull tasks from team leader's list and put them in their personal task list.
+14) Authorized users on a team can pull tasks from team leader's list and put them in their personal task list.
 
 
 ##Acknowledgements

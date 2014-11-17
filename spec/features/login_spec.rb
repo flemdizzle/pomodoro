@@ -1,1 +1,1 @@
-# Write loging capybara here
+# Write login capybara here
