@@ -1,18 +1,11 @@
 <div ng-app="taskApp">
   <div ng-controller="TaskListCtrl">
-    <form ng-submit="addTodo()">
-        <input type="text" ng-model="todoText"  size="30"
-               placeholder="add new todo here">
+    <form name="taskForm" ng-submit="save()">
+        <input type="text" ng-model="task.task"  size="30"
+               placeholder="add new task here">
         <input class="btn-primary" type="submit" value="add">
     </form>
-
-    Sort by:
-    <select ng-model="orderProp">
-      <option value="task">Alphabetical</option>
-      <option value="age">Newest</option>
-    </select>
     <ul>
-      <p>Hello, {{name}}</p>
       <p>Total number of tasks: {{tasks.length}}</p>
       <li ng-repeat="task in tasks">
         <span>{{task.task}}</span>
