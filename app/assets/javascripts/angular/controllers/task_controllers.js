@@ -63,6 +63,16 @@ myApp.controller("TaskListCtrl", ['$scope', '$resource', 'Tasks', 'Task', '$loca
     }
 ]);
 
+myApp.controller("ModalCtrl", ['$scope', function($scope){
+    $scope.checkedTasks = [];
+    $scope.loadChecked = function(){
+        // $scope.checkedTasks = $('input:checked').next().text();
+        $('input:checked').each(function(){
+            $scope.checkedTasks.push($(this).next().text());
+        });
+    };
+}]);
+
 // create action
 // myApp.controller("TaskAddCtrl", ['$scope', '$resource', 'Tasks', '$location', function($scope, $resource, Tasks, $location) {
 //   $scope.save = function () {
