@@ -40,6 +40,11 @@ myApp.factory('Task', ['$resource',
 // index action
 myApp.controller("TaskListCtrl", ['$scope', '$resource', 'Tasks', 'Task', '$location',
     function($scope, $resource, Tasks, Task, $location) {
+        $scope.checkedTasks = [];
+        $scope.checkTask = function(task){
+            console.log(task);
+            $scope.checkTask.push(task);
+        };
         $scope.tasks = Tasks.query(); //it's getting Task collection
         $scope.deleteTask = function(taskId) {
             Task.destroy({
@@ -48,10 +53,6 @@ myApp.controller("TaskListCtrl", ['$scope', '$resource', 'Tasks', 'Task', '$loca
             $scope.tasks = Tasks.query(); // after delete task get tasks collection.
         };
 
-        // $scope.addTask = function() {
-        //     task = Task.save($scope.newTask);
-        //     $scope.newEntry = {};
-        // };
         $scope.save = function() {
                 Tasks.create({
                     task: $scope.task
@@ -63,15 +64,16 @@ myApp.controller("TaskListCtrl", ['$scope', '$resource', 'Tasks', 'Task', '$loca
     }
 ]);
 
-myApp.controller("ModalCtrl", ['$scope', function($scope){
-    $scope.checkedTasks = [];
-    $scope.loadChecked = function(){
-        // $scope.checkedTasks = $('input:checked').next().text();
-        $('input:checked').each(function(){
-            $scope.checkedTasks.push($(this).next().text());
-        });
-    };
-}]);
+// myApp.controller("ModalCtrl", ['$scope', 'Task', function($scope, Task){
+//     $scope.checkedTasks = ['test'];
+//     $scope.loadChecked = function(callback){
+//         $('input:checked').each(function(){
+//             $scope.checkedTasks.push($(this).next().text());
+//         });
+//         console.log($scope.checkedTasks);
+//         callback($scope.checkedTasks);
+//     };
+// }]);
 
 // create action
 // myApp.controller("TaskAddCtrl", ['$scope', '$resource', 'Tasks', '$location', function($scope, $resource, Tasks, $location) {
