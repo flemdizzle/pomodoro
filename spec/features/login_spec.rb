@@ -1,0 +1,1 @@
+# Write loging capybara here
