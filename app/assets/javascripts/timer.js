@@ -37,18 +37,23 @@ CountDown.fn.updateCanvasColor = function() {
   var remainingTimePercentage = this.remainingTime / this.time;
   var transition, duration;
 
+  if (remainingTimePercentage <= 1) {
+    transition = 'white-to-green';
+    duration = 0.1 * this.time;
+  }
+
   if (remainingTimePercentage <= 0.7) {
-    transition = 'green-to-orange';
+    transition = 'green-to-yellow';
     duration = 0.2 * this.time;
   }
 
   if (remainingTimePercentage <= 0.5) {
-    transition = 'orange-to-yellow';
+    transition = 'yellow-to-orange';
     duration = 0.1 * this.time;
   }
 
   if (remainingTimePercentage <= 0.4) {
-    transition = 'yellow-to-red';
+    transition = 'orange-to-red';
     duration = 0.4 * this.time;
   }
 
@@ -85,5 +90,5 @@ CountDown.fn.init = function() {
 
 };
 
-new CountDown(document.querySelector('.canvas'), 2);
+new CountDown(document.querySelector('.canvas'), 30);
 });

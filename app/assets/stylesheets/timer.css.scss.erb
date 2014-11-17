@@ -14,7 +14,7 @@
   background-position: center;
   vertical-align: middle;
   text-align: center;
-  color: white;
+  color: #FFFFFF;
 }
 
 .content-box {
@@ -60,30 +60,39 @@
   -webkit-animation: blink 10s ease forwards;
 }
 
-.green-to-orange {
-  -webkit-animation: green-to-orange forwards;
+.white-to-green{
+  -webkit-animation: white-to-green forwards;
 }
 
-.orange-to-yellow {
-  -webkit-animation: orange-to-yellow forwards;
+.green-to-yellow {
+  -webkit-animation: green-to-yellow forwards;
 }
 
-.yellow-to-red {
-  -webkit-animation: yellow-to-red forwards;
+.yellow-to-orange {
+  -webkit-animation: yellow-to-orange forwards;
 }
 
-@-webkit-keyframes green-to-orange {
+.orange-to-red {
+  -webkit-animation: orange-to-red forwards;
+}
+
+@-webkit-keyframes white-to-green {
+  0% { color: #FFFFFF; }
+  100% { color: #03D473; }
+}
+
+@-webkit-keyframes green-to-yellow {
   0% { color: #03D473; }
-  100% { color: #F47600; }
-}
-
-@-webkit-keyframes orange-to-yellow {
-  0% { color: #F47600; }
   100% { color: #F5C502; }
 }
 
-@-webkit-keyframes yellow-to-red {
+@-webkit-keyframes yellow-to-orange {
   0% { color: #F5C502; }
+  100% { color: #F47600; }
+}
+
+@-webkit-keyframes orange-to-red {
+  0% { color: #F47600; }
   100% { color: #F12D22; }
 }
 
