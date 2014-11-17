@@ -1,0 +1,23 @@
+<br/>
+<div class="row">
+    <div class="col-md-12">
+        <a class="btn btn-primary" href="#/tasks/new">Add a Task</a>
+        <h3 class="block">Tasks</h3>
+        <table class="table table-striped">
+            <tr>
+                <th>Task</th>
+                <th>Category</th>
+            </tr>
+            <tr ng-hide="users.length" >
+                <td colspan="5">No users found, Please create one.</td>
+            </tr>
+            <tr ng-show="tasks.length" ng-repeat="task in tasks">
+                <td>{{task.task}}</td>
+                <td>{{task.category}}</td>
+                <td>
+                    <a href="#/tasks/{{task.id}}/edit">Edit</a> | <a href="" ng-click="deleteTask(task.id)">Remove</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

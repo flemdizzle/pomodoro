@@ -1,20 +1,26 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :html, :json
 
   def index
     @tasks = Task.all
-    respond_with(@tasks)
+    respond_to do |format|
+      format.html
+      format.json { render json: @tasks }
+    end
   end
 
   def show
-    respond_with(@task)
+    respond_to do |format|
+      format.html
+      format.json { render json: @task }
+    end
   end
 
   def new
     @task = Task.new
-    respond_with(@task)
+    respond_with Task.create(params[:task])
   end
 
   def edit
