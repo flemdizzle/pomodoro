@@ -33,7 +33,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-# Testing (no Jasmine yet -- delete this when you install Jasmine)
+# Testing (for Jasmine, CMD <rake jasmine> and go to localhost:8888)
+# More Jasmine help here: https://github.com/pivotal/jasmine-gem)
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
