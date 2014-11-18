@@ -41,7 +41,7 @@ group :development, :test do
   gem 'jasmine'
 end
 
-
+ gem 'guard-rspec', require: false
 
 
 
