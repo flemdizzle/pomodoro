@@ -2,12 +2,12 @@
 <html>
 <head>
   <title>Pomodoro</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
+<body ng-app="taskApp">
 <!-- For devise -->
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
@@ -15,14 +15,19 @@
 <!-- For devise -->
 <div id="user_nav">
   <% if user_signed_in? %>
-    Signed in as <%= current_user.email %>.
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+    <%= current_user.email %> |
+    <%= link_to "sign out", destroy_user_session_path, :method => :delete %>
   <% else %>
-    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+    <%= link_to "sign up", new_user_registration_path %> | <%= link_to "sign in", new_user_session_path %>
+  <% end %>
+ <% if user_signed_in? %>
+  |
+   <%= link_to "view settings", edit_user_registration_path %>
   <% end %>
 </div>
 
 <%= yield %>
+
 
 </body>
 </html>

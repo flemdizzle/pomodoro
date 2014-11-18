@@ -1,0 +1,135 @@
+.timer-div {
+  font-family: 'Open Sans Condensed', sans-serif;
+  line-height: 1;
+  text-transform: uppercase;
+  display: table;
+}
+
+.canvas {
+  height: 480px;
+  width: 320px;
+  position: relative;
+  background-image: url(<%= asset_path 'spin.gif' %>);
+  background-size: cover;
+  background-position: center;
+  vertical-align: middle;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.content-box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.timer-bar {
+  border-top: 10px solid rgba(0,0,0,.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  -webkit-transition: width .5s ease;
+  z-index: 10;
+}
+
+.timer-display {
+  font-size: 100px;
+}
+
+.timer-info {
+  color: rgba(0,0,0,.5);
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.timer-button {
+  font-size: 22px;
+  background: rgba(0,0,0,.5);
+  padding: 15px 35px;
+  border-radius: 3px;
+  text-align: center;
+  color: rgba(255,255,255,.7);
+  cursor: pointer;
+  display: inline-block;
+}
+
+.finishing {
+  -webkit-animation: blink 10s ease forwards;
+}
+
+.white-to-green{
+  -webkit-animation: white-to-green forwards;
+}
+
+.green-to-yellow {
+  -webkit-animation: green-to-yellow forwards;
+}
+
+.yellow-to-orange {
+  -webkit-animation: yellow-to-orange forwards;
+}
+
+.orange-to-red {
+  -webkit-animation: orange-to-red forwards;
+}
+
+@-webkit-keyframes white-to-green {
+  0% { color: #FFFFFF; }
+  100% { color: #03D473; }
+}
+
+@-webkit-keyframes green-to-yellow {
+  0% { color: #03D473; }
+  100% { color: #F5C502; }
+}
+
+@-webkit-keyframes yellow-to-orange {
+  0% { color: #F5C502; }
+  100% { color: #F47600; }
+}
+
+@-webkit-keyframes orange-to-red {
+  0% { color: #F47600; }
+  100% { color: #F12D22; }
+}
+
+@-webkit-keyframes blink {
+  0% { opacity: 1; }
+  3% { opacity: 0; }
+  6% { opacity: 1; }
+  9% { opacity: 0; }
+  12% { opacity: 1; }
+  15% { opacity: 0; }
+  18% { opacity: 1; }
+  21% { opacity: 0; }
+  24% { opacity: 1; }
+  27% { opacity: 0; }
+  30% { opacity: 1; }
+  33% { opacity: 0; }
+  36% { opacity: 1; }
+  39% { opacity: 0; }
+  42% { opacity: 1; }
+  45% { opacity: 0; }
+  48% { opacity: 1; }
+  51% { opacity: 0; }
+  54% { opacity: 1; }
+  57% { opacity: 0; }
+  60% { opacity: 1; }
+  63% { opacity: 0; }
+  66% { opacity: 1; }
+  69% { opacity: 0; }
+  72% { opacity: 1; }
+  75% { opacity: 0; }
+  78% { opacity: 1; }
+  81% { opacity: 0; }
+  84% { opacity: 1; }
+  87% { opacity: 0; }
+  90% { opacity: 1; }
+  93% { opacity: 0; }
+  96% { opacity: 1; }
+  99% { opacity: 0; }
+  100% { opacity: 1; }
+}

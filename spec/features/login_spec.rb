@@ -1,3 +1,4 @@
+
 # Write loging capybara here
 require 'spec_helper'
 
@@ -28,6 +29,7 @@ describe 'user can use timer' do
   it 'user can only have timer to 25 minutes'do
   end
 end
+
 
 
 
