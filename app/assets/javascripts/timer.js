@@ -98,7 +98,7 @@ CountDown.fn.init = function() {
 
 
 
-new CountDown(document.querySelector('.canvas'), 30);
+new CountDown(document.querySelector('.canvas'), 20);
 });
 
 
