@@ -74,7 +74,6 @@ CountDown.fn.checkFinalTime = function() {
 };
 
 // change background image of canvas div
-
   $('.timer-button').click(function() {
        $('.canvas').addClass("spinner");
      });
@@ -82,6 +81,7 @@ CountDown.fn.checkFinalTime = function() {
 CountDown.fn.init = function() {
   var tid = setInterval(function(){
     if (this.remainingTime === 0) {
+      $('.canvas').toggleClass('spinner');
       $('#myModal').modal('toggle');
       return clearInterval(tid);
     }
