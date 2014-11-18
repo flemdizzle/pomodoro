@@ -69,7 +69,6 @@
   color: red;
 }
 
-/* Blinker not correctly aligned with ticker. Should reach 100% opacity on the second. */
 .finishing {
   -webkit-animation-name: blinker;
   -webkit-animation-duration: 1s;
@@ -77,11 +76,9 @@
   -webkit-animation-iteration-count: infinite;
 }
 
-/* Totally open to not fading in/out if you want that instead */
 @-webkit-keyframes blinker {
   0% { opacity: 1.0; }
-  50% { opacity: 0.0; }
-  100% { opacity: 1.0; }
+  100% { opacity: 0.0; }
 }
 
 .white-to-green{

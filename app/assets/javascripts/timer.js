@@ -68,7 +68,7 @@ CountDown.fn.updateBarWidth = function() {
 };
 
 CountDown.fn.checkFinalTime = function() {
-  if (this.remainingTime === 10) {
+  if (this.remainingTime === 11) {
     this.display.classList.add('finishing');
   }
 };
