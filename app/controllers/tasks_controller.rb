@@ -52,6 +52,15 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
 
+  def update_multiple
+    @task = Task.update(params[:tasks].keys, params[:task].values)
+    redirect_to timer_path
+  end
+
+  def timer
+    @tasks = Task.all
+  end
+
   private
     def set_task
       @task = Task.find(params[:id])

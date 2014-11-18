@@ -90,5 +90,9 @@ CountDown.fn.init = function() {
 
 };
 
+<<<<<<< HEAD
+new CountDown(document.querySelector('.canvas'), 5);
+=======
 new CountDown(document.querySelector('.canvas'), 60);
+>>>>>>> master
 });
