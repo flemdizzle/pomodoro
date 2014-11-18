@@ -37,9 +37,10 @@ gem 'spring',        group: :development
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'jasmine'
 end
 
- gem 'guard-rspec', require: false
+
 
 
 
