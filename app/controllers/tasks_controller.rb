@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   respond_to :html, :json
 
   def index
-    @tasks = Task.all
+    @tasks = Task.all.not_complete
     respond_to do |format|
       format.html
       format.json { render json: @tasks }
@@ -29,21 +29,21 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     @task.save
-    respond_with(@task)
+    # respond_with(@task)
   end
 
   def update
     @task.update(task_params)
-    respond_with(@task)
+    # respond_with(@task)
   end
 
   def destroy
     @task.destroy
-    respond_with(@task)
+    # respond_with(@task)
   end
 
   def update_multiple
-    @task = Task.update(params[:tasks].keys, params[:task].values)
+    @task = Task.update(params[:id].keys, params[:tasks].values)
     redirect_to timer_path
   end
 

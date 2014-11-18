@@ -40,25 +40,31 @@ myApp.factory('Task', ['$resource',
 // index action
 myApp.controller("TaskListCtrl", ['$scope', '$resource', 'Tasks', 'Task', '$location',
     function($scope, $resource, Tasks, Task, $location) {
-        $scope.checkedTasks = [];
-        $scope.checkTask = function(task){
-            console.log(task);
-            $scope.checkTask.push(task);
+        
+        $scope.tasks = [];
+        $scope.loadTask = function(){
+            $scope.tasks.push(Tasks.query());
         };
+        $scope.loadTask();
         $scope.tasks = Tasks.query(); //it's getting Task collection
         $scope.deleteTask = function(taskId) {
             Task.destroy({
                 id: taskId
             });
-            $scope.tasks = Tasks.query(); // after delete task get tasks collection.
-        };
 
+        };
         $scope.save = function() {
                 Tasks.create({
                     task: $scope.task
                 });
-                $scope.tasks = Tasks.query();
+                $scope.tasks.push($scope.task);
                 $scope.task = {};
+        };
+        $scope.update = function(id, task){
+           Task.update({
+            id: id,
+            task: task
+            });
         };
 
     }

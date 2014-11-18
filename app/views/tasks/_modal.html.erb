@@ -2,7 +2,7 @@
   <div id="myModal" class="modal fade">
     <div class="modal-dialog">
       <div class="modal-content">
-        <form id="modal-form">
+        <!-- <form id="modal-form"> -->
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
           <h3 class="modal-title">Times Up!</h3>
@@ -14,22 +14,11 @@
               {{completed.task}}
             </li>
           </ul>
-       <!--    <%= form_tag update_multiple_tasks_path, :method => :put do %>
-            <% for task in @tasks %>
-              <%= fields_for "tasks[]", task do |f| %>
-                <h2><%=h task.task %></h2>
-                <%= f.label :task %>
-                <%= f.text_field :task %>
-              <% end %>
-            <% end %>
-            <p><%= submit_tag "Submit" %></p>
-          <% end %> -->
+          </div>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal" onClick="window.location.reload()">Start New Session</button>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button id="modal-submit" type="submit" class="btn btn-primary">Save History</button>
-        </div>
-        </form>
+        <!-- </form> -->
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->

@@ -15,11 +15,11 @@
              <button ng-click="deleteTask(task.id)">&times;</button>
            </li>
            </div>
-      <li ng-repeat="task in tasks | orderBy : reverse" type="none">
+      <li ng-hide="hide" ng-repeat="task in tasks | orderBy : reverse" type="none">
         <!-- This ng-click updates checked status -->
-        <input type="checkbox" ng-model="task.complete" [ng-true-value="task.complete = true"]>
+        <input type="checkbox" ng-model="task.complete" ng-click="update(task.id, task)">
         <span class="done-{{task.complete}}">{{task.task}}</span>
-        <button ng-click="deleteTask(task.id)">&times;</button>
+        <button ng-click="deleteTask(task.id); hide=true">&times;</button>
       </li>
     </ul>
   </div>
