@@ -39,6 +39,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
+    respond_to :json
     # respond_with(@task)
   end
 
