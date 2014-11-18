@@ -1,7 +1,6 @@
-<div>
-
+<div ng-controller="TaskListCtrl">
   <%= render "timer" %>
-  <div ng-controller="TaskListCtrl">
+  <div>
       <p>Total number of tasks: {{tasks.length}}</p>
     <form name="taskForm" ng-submit="save()">
         <input type="text" ng-model="task.task"  size="30"
@@ -16,14 +15,13 @@
              <button ng-click="deleteTask(task.id)">&times;</button>
            </li>
            </div>
-      <li ng-repeat="task in tasks | orderBy : reverse" type="none">
+      <li ng-hide="hide" ng-repeat="task in tasks | orderBy : reverse" type="none">
         <!-- This ng-click updates checked status -->
-        <input type="checkbox" value="{{task.id}}">
-        <span>{{task.task}}</span>
-        <button ng-click="deleteTask(task.id)">&times;</button>
+        <input type="checkbox" ng-model="task.complete" ng-click="update(task.id, task)">
+        <span class="done-{{task.complete}}">{{task.task}}</span>
+        <button ng-click="deleteTask(task.id); hide=true">&times;</button>
       </li>
     </ul>
   </div>
-</div>
-<% image_tag "spin.gif" %>
 <%= render "modal" %>
+</div>

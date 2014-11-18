@@ -90,5 +90,5 @@ CountDown.fn.init = function() {
 
 };
 
-new CountDown(document.querySelector('.canvas'), 60);
+new CountDown(document.querySelector('.canvas'), 5);
 });
