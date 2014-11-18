@@ -8,12 +8,22 @@
           <h3 class="modal-title">Times Up!</h3>
         </div>
         <div class="modal-body">
-          <ul>
-          <h4><bold>Completed:</bold></h4>
-          <li ng-repeat="completed in tasks" type="none" ng-show="completed.complete === true"> 
-            {{completed.task}}
-          </li>
-        </ul>
+         <!--  <ul>
+            <h4><bold>Completed:</bold></h4>
+            <li ng-repeat="completed in tasks" type="none" ng-show="completed.complete === true"> 
+              {{completed.task}}
+            </li>
+          </ul> -->
+          <%= form_tag update_multiple_tasks_path, :method => :put do %>
+            <% for task in @tasks %>
+              <%= fields_for "tasks[]", task do |f| %>
+                <h2><%=h task.task %></h2>
+                <%= f.label :task %>
+                <%= f.text_field :task %>
+              <% end %>
+            <% end %>
+            <p><%= submit_tag "Submit" %></p>
+          <% end %>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
