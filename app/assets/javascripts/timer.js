@@ -73,6 +73,12 @@ CountDown.fn.checkFinalTime = function() {
   }
 };
 
+// change background image of canvas div
+
+  $('.timer-button').click(function() {
+       $('.canvas').addClass("spinner");
+     });
+
 CountDown.fn.init = function() {
   var tid = setInterval(function(){
     if (this.remainingTime === 0) {
@@ -87,8 +93,12 @@ CountDown.fn.init = function() {
     this.checkFinalTime();
   }.bind(this), 1000);
   $('.timer-button').hide();
+  };
 
-};
+
+
 
 new CountDown(document.querySelector('.canvas'), 30);
 });
+
+
