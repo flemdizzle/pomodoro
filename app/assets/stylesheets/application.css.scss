@@ -22,4 +22,25 @@ body {
 
 #user_nav {
   float: right;
+  color: white;
 }
+
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+  background-color: #2A2826;
+  color: red;
+}
+
+p {
+  color: white;
+}
+
