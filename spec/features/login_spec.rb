@@ -18,13 +18,18 @@ describe 'user creates taks' do
   end
 end
 
-describe ' user log in and out' do
+describe 'user log in and out' do
   it 'should take user to the welcome page' do
   end
 end
 
 
 describe 'user can use timer' do
-  it ' user can only have timer to 25 minutes'do
+  it 'user can only have timer to 25 minutes'do
   end
 end
+
+
+
+
+
