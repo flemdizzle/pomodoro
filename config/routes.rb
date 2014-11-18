@@ -3,9 +3,13 @@ Rails.application.routes.draw do
 
   resources :teams
 
-  resources :tasks
+  resources :tasks do
+    collection do
+      put 'update_multiple'
+    end
+  end
 
-  root 'tasks#index'
+  root 'tasks#timer'
   get 'timer' => 'tasks#timer'
 
   # The priority is based upon order of creation: first created -> highest priority.
