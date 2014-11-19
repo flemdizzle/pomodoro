@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
 $(function () {
     var date = new Date();
     function taskPerDay(timeOfDay){
@@ -28,6 +27,15 @@ $(function () {
       }else{
         return afternoon;
       }
+    }
+    function average(){
+      mornArray = taskPerDay("morning");
+      aftrArray = taskPerDay("afternoon");
+      avgArray = [];
+      for(var i = 0; i <= 6; i++){
+        avgArray.push((mornArray[i] + aftrArray[i])/2);
+      }
+      return avgArray;
     }
     var monthNames = [ "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December" ];
@@ -72,7 +80,7 @@ $(function () {
         }, {
             type: 'spline',
             name: 'Average',
-            data: [3, 2.67, 3, 6.33, 3.33],
+            data: average(),
             marker: {
                 lineWidth: 2,
                 lineColor: Highcharts.getOptions().colors[3],
