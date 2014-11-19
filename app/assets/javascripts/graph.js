@@ -1,6 +1,34 @@
 $(document).ready(function(){
+
 $(function () {
     var date = new Date();
+    function taskPerDay(timeOfDay){
+      var morning = [];
+      var afternoon = [];
+      for(var i = date.getDate() - 6; i <= date.getDate(); i++) {
+        var mrnCntr = 0;
+        var aftrCntr = 0;
+        for(var x = 0; x < complete.length; x++) {
+          console.log(i);
+          if(~~complete[x].substring(8,10) == i){
+            if(~~complete[x].substring(11,13) < 17){
+                mrnCntr ++;
+            }else{
+              aftrCntr ++;
+            }
+          }
+          
+          }
+        morning.push(mrnCntr);
+        afternoon.push(aftrCntr);
+        }
+      console.log(morning);
+      if(timeOfDay === "morning"){
+        return morning;
+      }else{
+        return afternoon;
+      }
+    }
     var monthNames = [ "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December" ];
     var dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -16,7 +44,6 @@ $(function () {
       }
       return weekArray;
     }
-    console.log(date.getDay());
     $('#container').highcharts({
         title: {
             text: 'Week of ' + monthNames[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear()
@@ -37,11 +64,11 @@ $(function () {
         series: [{
             type: 'column',
             name: 'Morning',
-            data: [3, 2, 1, 3, 4, 5, 7]
+            data: taskPerDay("morning")
         }, {
             type: 'column',
             name: 'Afternoon',
-            data: [2, 3, 5, 7, 6]
+            data: taskPerDay("afternoon")
         }, {
             type: 'spline',
             name: 'Average',
