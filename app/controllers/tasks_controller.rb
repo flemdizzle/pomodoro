@@ -58,7 +58,7 @@ class TasksController < ApplicationController
   end
 
   def timer
-    @tasks = Task.all
+    @complete = Task.all.complete
   end
 
   private

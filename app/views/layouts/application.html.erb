@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Pomodoro</title>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -12,13 +12,15 @@
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
-<!-- For devise -->
+<!-- For devise navbar -->
 <div id="user_nav">
   <% if user_signed_in? %>
     <%= current_user.email %> |
-    <%= link_to "sign out", destroy_user_session_path, :method => :delete %>
+    <%= link_to "sign out", destroy_user_session_path, :method => :delete %> |
+    <%= link_to "settings", edit_user_registration_path %>
   <% else %>
-    <%= link_to "sign up", new_user_registration_path %> | <%= link_to "sign in", new_user_session_path %>
+    <%= link_to "sign up", new_user_registration_path %> |
+    <%= link_to "sign in", new_user_session_path %>
   <% end %>
  <% if user_signed_in? %>
   |
@@ -29,5 +31,7 @@
 <%= yield %>
 
 
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
 </body>
 </html>

@@ -5,12 +5,12 @@
         <!-- <form id="modal-form"> -->
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-          <h3 class="modal-title">Times Up!</h3>
+          <h3 class="modal-title">Time's Up!</h3>
         </div>
         <div class="modal-body">
           <ul>
             <h4><bold>Completed:</bold></h4>
-            <li ng-repeat="completed in tasks" type="none" ng-show="completed.complete === true"> 
+            <li ng-repeat="completed in tasks" type="none" ng-show="completed.complete === true">
               {{completed.task}}
             </li>
           </ul>
@@ -23,4 +23,4 @@
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
 
-  <button ng-click="loadChecked()" type="button" data-toggle="modal" data-target="#myModal">Launch modal</button>
+  <button id='stop-timer' ng-click="loadChecked()" type="button" data-toggle="modal" data-target="#myModal">STOP TIMER</button>

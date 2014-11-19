@@ -5,14 +5,25 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+def task_gen
+  return Faker::Commerce.product_name
+end
+
+def time_gen
+  return Faker::Time.backward(7, :day)
+end
+
+def combine_task_and_date
+  output =[]
+  50.times do
+    output << {task: "#{task_gen}", updated_at: "#{time_gen}", complete: true}
+  end
+  return output
+end
 
 Task.destroy_all
 
-Task.create!([
-	{task: "Making Code", updated_at: "2014-11-15 20:34:03"},
-	{task: "Expo Markers", updated_at: "2014-11-15 20:34:03"},
-	{task: "Ginger Bread", updated_at: "2014-11-15 20:34:03"},
-	{task: "Making Code", updated_at: "2014-11-15 20:34:03"},
-	{task: "Expo Markers", updated_at: "2014-11-15 20:34:03"},
-	{task: "Ginger Bread", updated_at: "2014-11-15 20:34:03"},
-	])
+Task.create!(combine_task_and_date)
+
+
+

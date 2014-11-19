@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'faker', '~> 1.4.3'
 #add devise
 gem 'devise', '3.4.1'
 #add angular
