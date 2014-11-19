@@ -100,5 +100,3 @@ CountDown.fn.init = function() {
 
 new CountDown(document.querySelector('.canvas'), 20);
 });
-
-
