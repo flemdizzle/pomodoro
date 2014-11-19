@@ -37,11 +37,14 @@ gem 'spring',        group: :development
 # More Jasmine help here: https://github.com/pivotal/jasmine-gem)
 group :development, :test do
   gem 'rspec-rails'
-  gem 'capybara'
   gem 'jasmine'
+  gem 'guard-rspec', require: false
 end
 
- gem 'guard-rspec', require: false
+group :test do
+  gem 'capybara', require: false
+  gem 'selenium-webdriver', require: false
+end
 
 
 
