@@ -1,5 +1,4 @@
-<div id='timer-tasks'>
-
+<div id='timer-tasks' ng-controller="TaskListCtrl">
   <%= render "timer" %>
   <div id='task-list' ng-controller="TaskListCtrl">
     <form id='input-bar' name="taskForm" ng-submit="save()">
@@ -7,8 +6,8 @@
                placeholder="add new task then press Enter" type="submit">
       <!-- <br>{{task.task}} -->
     </form>
-    <ul reversed>
-     <div ng-show="task.task.length > 0">
+    <ul>
+      <div ng-show="task.task.length > 0">
            <li type="none">
              <input type="checkbox">
              <span>{{task.task}}</span>
@@ -17,17 +16,22 @@
            </div>
       <li class='testing' ng-hide="hide" ng-repeat="task in tasks | orderBy : reverse" type="none">
         <!-- This ng-click updates checked status -->
-      <input type="checkbox" ng-model="task.complete" ng-click="update(task.id, task)">
+        <input type="checkbox" ng-model="task.complete" ng-click="update(task.id, task)">
         <span class="done-{{task.complete}}">{{task.task}}</span>
         <button ng-click="deleteTask(task.id); hide=true">&times;</button>
       </li>
     </ul>
     <br />
-     <p>total number of tasks: {{tasks.length}}</p>
-     <br />
-     <%= render "modal" %>
+    <p>total number of tasks: {{tasks.length}}</p>
+    <br />
+    <%= render "modal" %>
+    <%= render "graph" %>
   </div>
 </div>
-<%= render "graph" %>
 
-</div>
+<script type="text/javascript">
+  var complete = []
+<% @complete.each do |task| %>
+  complete.push("<%= task.updated_at %>");
+<% end %>
+</script>
