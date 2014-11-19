@@ -21,3 +21,14 @@ describe "landing page", js: true do
     expect(page).to have_link("sign in")
   end
 end
+
+
+describe "landing page", js: true do
+  it 'should contain sign up' do
+    visit '/'
+    expect(page).to have_link("sign up")
+  end
+end
+
+
+# testing the landing page to see if all buttons, links, css are present on the page.
