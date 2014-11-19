@@ -1,34 +1,47 @@
 $(document).ready(function(){
 $(function () {
+    var date = new Date();
+    var monthNames = [ "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December" ];
+    var dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    function lastSevenDays(){
+      weekArray = [];
+      for (var i = 6; i >= 0; i--) {
+        var num = date.getDay() - i;
+        if(num >=0){
+          weekArray.push(dayNames[num]);
+        }else{
+          weekArray.push(dayNames[7 - Math.abs(num)]);
+        }
+      }
+      return weekArray;
+    }
+    console.log(date.getDay());
     $('#container').highcharts({
         title: {
-            text: 'Week of November 16, 2014'
+            text: 'Week of ' + monthNames[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear()
         },
         xAxis: {
-            categories: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+            categories: lastSevenDays()
         },
         labels: {
-            items: [{
-                html: 'Total Pomodoros Completed',
-                style: {
-                    left: '50px',
-                    top: '18px',
-                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
-                }
-            }]
+            // items: [{
+            //     html: 'Total Pomodoros Completed',
+            //     style: {
+            //         left: '50px',
+            //         top: '18px',
+            //         color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+            //     }
+            // }]
         },
         series: [{
             type: 'column',
-            name: 'Admin',
-            data: [3, 2, 1, 3, 4]
+            name: 'Morning',
+            data: [3, 2, 1, 3, 4, 5, 7]
         }, {
             type: 'column',
-            name: 'Back-end',
+            name: 'Afternoon',
             data: [2, 3, 5, 7, 6]
-        }, {
-            type: 'column',
-            name: 'Front-end',
-            data: [4, 3, 3, 9, 0]
         }, {
             type: 'spline',
             name: 'Average',
@@ -38,28 +51,28 @@ $(function () {
                 lineColor: Highcharts.getOptions().colors[3],
                 fillColor: 'white'
             }
-        }, {
-            type: 'pie',
-            name: 'Total Pomodoros',
-            data: [{
-                name: 'Admin',
-                y: 13,
-                color: Highcharts.getOptions().colors[0] // Jane's color
-            }, {
-                name: 'Back-end',
-                y: 23,
-                color: Highcharts.getOptions().colors[1] // John's color
-            }, {
-                name: 'Front-end',
-                y: 19,
-                color: Highcharts.getOptions().colors[2] // Joe's color
-            }],
-            center: [100, 80],
-            size: 100,
-            showInLegend: false,
-            dataLabels: {
-                enabled: false
-            }
+        // }, {
+        //     type: 'pie',
+        //     name: 'Total Pomodoros',
+        //     data: [{
+        //         name: 'Admin',
+        //         y: 13,
+        //         color: Highcharts.getOptions().colors[0] // Jane's color
+        //     }, {
+        //         name: 'Back-end',
+        //         y: 23,
+        //         color: Highcharts.getOptions().colors[1] // John's color
+        //     }, {
+        //         name: 'Front-end',
+        //         y: 19,
+        //         color: Highcharts.getOptions().colors[2] // Joe's color
+        //     }],
+        //     center: [100, 80],
+        //     size: 100,
+        //     showInLegend: false,
+        //     dataLabels: {
+        //         enabled: false
+            // }
         }]
     });
 });
