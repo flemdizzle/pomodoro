@@ -63,9 +63,9 @@ CountDown.fn.updateCanvasColor = function() {
   }
 };
 
-CountDown.fn.updateBarWidth = function() {
-  this.bar.style.width = (this.elapsedTime / this.time * 100) + '%';
-};
+// CountDown.fn.updateBarWidth = function() {
+//   this.bar.style.width = (this.elapsedTime / this.time * 100) + '%';
+// };
 
 CountDown.fn.checkFinalTime = function() {
   if (this.remainingTime === 10) {
@@ -90,5 +90,5 @@ CountDown.fn.init = function() {
 
 };
 
-new CountDown(document.querySelector('.canvas'), 60);
+new CountDown(document.querySelector('.canvas'), 10);
 });
