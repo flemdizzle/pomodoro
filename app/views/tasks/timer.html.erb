@@ -1,7 +1,7 @@
 <div id='timer-tasks' ng-controller="TaskListCtrl">
   <%= render "timer" %>
-      <p>Total number of tasks: {{tasks.length}}</p>
-    <form name="taskForm" ng-submit="save()">
+  <div id='task-list' ng-controller="TaskListCtrl">
+    <form id='input-bar' name="taskForm" ng-submit="save()">
         <input type="text" ng-model="task.task"  size="30"
                placeholder="add new task then press Enter" type="submit">
       <!-- <br>{{task.task}} -->
@@ -13,16 +13,20 @@
              <span>{{task.task}}</span>
              <button ng-click="deleteTask(task.id)">&times;</button>
            </li>
-      </div>
-      <li ng-hide="hide" ng-repeat="task in tasks | orderBy : reverse" type="none">
+           </div>
+      <li class='testing' ng-hide="hide" ng-repeat="task in tasks | orderBy : reverse" type="none">
         <!-- This ng-click updates checked status -->
         <input type="checkbox" ng-model="task.complete" ng-click="update(task.id, task)">
         <span class="done-{{task.complete}}">{{task.task}}</span>
         <button ng-click="deleteTask(task.id); hide=true">&times;</button>
       </li>
     </ul>
-  <%= render "modal" %>
-  <%= render "graph" %>
+    <br />
+    <p>total number of tasks: {{tasks.length}}</p>
+    <br />
+    <%= render "modal" %>
+    <%= render "graph" %>
+  </div>
 </div>
 
 <script type="text/javascript">

@@ -2,6 +2,97 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* This is style for the task list only */
+
+
+#timer-tasks {
+}
+
+#task-list {
+  background-color: #323233;
+  color: #ffffff;
+  font-family: 'Open Sans Condensed', sans-serif;
+  width: 1200px;
+  min-height: 300px;
+  /* There is no max-height so that users can list as many items as they want */
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 2px;
+}
+
+#input-bar {
+  color: #000000;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 22px;
+  padding: 15px;
+}
+
+p {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 18px;
+}
+
+ul {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+}
+
+ul li {
+  display: inline;
+}
+
+/* Gets the task list in 3 cols */
+.testing {
+word-wrap: normal;
+min-width: 33%;
+max-width: 33%;
+display: inline-block;
+}
+
+button {
+    background-color: #1c1c1c;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:10px;
+    color: #ffffff;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;
+}
+
+button:hover {
+    border: none;
+    background:red;
+    box-shadow: 0px 0px 1px #777;
+}
+
+#stop-timer {
+    background-color: #1c1c1c;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:2px;
+    color: #ffffff;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;
+}
+
+#stop-timer:hover {
+    border: none;
+    background: #F47600;
+    box-shadow: 0px 0px 1px #777;
+}
+
 .done-true{
 	text-decoration: line-through;
 }
