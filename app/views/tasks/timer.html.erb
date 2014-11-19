@@ -2,7 +2,7 @@
 
   <%= render "timer" %>
   <div id='task-list' ng-controller="TaskListCtrl">
-    <form name="taskForm" ng-submit="save()">
+    <form id='input-bar' name="taskForm" ng-submit="save()">
         <input type="text" ng-model="task.task"  size="30"
                placeholder="add new task then press Enter" type="submit">
       <!-- <br>{{task.task}} -->
