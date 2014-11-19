@@ -1,14 +1,15 @@
-<div ng-controller="TaskListCtrl">
+<div id='timer-tasks'>
+
   <%= render "timer" %>
-  <div>
+  <div ng-controller="TaskListCtrl">
       <p>Total number of tasks: {{tasks.length}}</p>
     <form name="taskForm" ng-submit="save()">
         <input type="text" ng-model="task.task"  size="30"
-               placeholder="add new task here" type="submit">
+               placeholder="add new task then press Enter" type="submit">
       <!-- <br>{{task.task}} -->
-    </form>    
+    </form>
     <ul>
-     <div ng-show="task.task.length > 0"> 
+     <div ng-show="task.task.length > 0">
            <li type="none">
              <input type="checkbox">
              <span>{{task.task}}</span>
@@ -23,5 +24,6 @@
       </li>
     </ul>
   </div>
+</div>
 <%= render "modal" %>
 </div>

@@ -12,13 +12,15 @@
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
-<!-- For devise -->
+<!-- For devise navbar -->
 <div id="user_nav">
   <% if user_signed_in? %>
     <%= current_user.email %> |
-    <%= link_to "sign out", destroy_user_session_path, :method => :delete %>
+    <%= link_to "sign out", destroy_user_session_path, :method => :delete %> |
+    <%= link_to "settings", edit_user_registration_path %>
   <% else %>
-    <%= link_to "sign up", new_user_registration_path %> | <%= link_to "sign in", new_user_session_path %>
+    <%= link_to "sign up", new_user_registration_path %> |
+    <%= link_to "sign in", new_user_session_path %>
   <% end %>
  <% if user_signed_in? %>
   |
