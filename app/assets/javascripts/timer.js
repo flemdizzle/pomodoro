@@ -63,19 +63,25 @@ CountDown.fn.updateCanvasColor = function() {
   }
 };
 
-// CountDown.fn.updateBarWidth = function() {
-//   this.bar.style.width = (this.elapsedTime / this.time * 100) + '%';
-// };
+CountDown.fn.updateBarWidth = function() {
+  this.bar.style.width = (this.elapsedTime / this.time * 100) + '%';
+};
 
 CountDown.fn.checkFinalTime = function() {
-  if (this.remainingTime === 10) {
+  if (this.remainingTime === 11) {
     this.display.classList.add('finishing');
   }
 };
 
+// change background image of canvas div
+  $('.timer-button').click(function() {
+       $('.canvas').addClass("spinner");
+     });
+
 CountDown.fn.init = function() {
   var tid = setInterval(function(){
     if (this.remainingTime === 0) {
+      $('.canvas').toggleClass('spinner');
       $('#myModal').modal('toggle');
       return clearInterval(tid);
     }
@@ -87,8 +93,10 @@ CountDown.fn.init = function() {
     this.checkFinalTime();
   }.bind(this), 1000);
   $('.timer-button').hide();
+  };
 
-};
 
-new CountDown(document.querySelector('.canvas'), 10);
+
+
+new CountDown(document.querySelector('.canvas'), 20);
 });
