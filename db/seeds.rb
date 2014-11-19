@@ -5,80 +5,25 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-require 'faker'
-
-tasks = []
-dates = []
-
-100.times do
-  tasks << Faker::Commerce.product_name
+def task_gen
+  return Faker::Commerce.product_name
 end
 
-100.times do
-  dates << Faker::Date.backward(14)
+def time_gen
+  return Faker::Time.backward(7, :day)
 end
 
+def combine_task_and_date
+  output =[]
+  50.times do
+    output << {task: "#{task_gen}", updated_at: "#{time_gen}"}
+  end
+  return output
+end
 
 Task.destroy_all
 
-Task.create!([
+Task.create!(combine_task_and_date)
 
-	{task: "Making Code", updated_at: "2014-11-15 20:34:03"},
-	{task: "Expo Markers", updated_at: "2014-11-15 20:34:03"},
-	{task: "Ginger Bread", updated_at: "2014-11-15 20:34:03"},
-	{task: "Making Code", updated_at: "2014-11-15 20:34:03"},
-	{task: "Expo Markers", updated_at: "2014-11-15 20:34:03"},
-	{task: "Ginger Bread", updated_at: "2014-11-15 20:34:03"},
-	{task: "Write User Stories", updated_at: dates.sample, complete: true },
-  {task: "Catch up on emails", updated_at: dates.sample, complete: true},
-  {task: "User can log in", updated_at: dates.sample, complete: true },
-  {task: "Create ERD", updated_at: dates.sample, complete: true },
-  {task: "Complete Wireframes", updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true },
-  {task: tasks.sample, updated_at: dates.sample, complete: true }
-
-  ])
-
-
-50.times do
-Task.create!([{task: tasks.sample, updated_at: dates.sample, complete: true }])
-end
 
 
