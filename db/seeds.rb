@@ -16,7 +16,7 @@ end
 def combine_task_and_date
   output =[]
   50.times do
-    output << {task: "#{task_gen}", updated_at: "#{time_gen}"}
+    output << {task: "#{task_gen}", updated_at: "#{time_gen}", complete: true}
   end
   return output
 end
