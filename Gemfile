@@ -41,6 +41,10 @@ group :development, :test do
   gem 'jasmine'
 end
 
+ gem 'guard-rspec', require: false
+
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
