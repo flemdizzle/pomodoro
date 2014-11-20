@@ -1,19 +1,23 @@
-#Pomodoro App
+#Tomatodoro
 
 ##What is it?
-An app that...
+Tomatodoro is a pomodoro-style timer that helps you manage your time and to do list and provides information about your trends through data visualization. It was created as the second (group) project at General Assembly's Web Development Immersive 3 in Washington, DC.
 
 ##Documentation
-Files composing the app can be found at [Lydia's GitHub] (https://github.com/lydianimosa/pomodoro). The site will evenually be deployed to Heroku and an address will be provided.
+Files composing the app can be found at [Lydia's GitHub](https://github.com/lydianimosa/pomodoro). The site is also on [Heroku](https://team-rock.herokuapp.com/timer).
 
 ##Technologies used
 * Ruby 2.1.2
 * Ruby on Rails 4.1.6
+* Javascript and jQuery
+* Angular.JS for Rails 1.3.2
 * PostgreSQL 9.3.5
-* Authentication by [Devise] (https://github.com/plataformatec/devise)
-* Testing Rspec, capybara, Guard, selenium-webdriver and Jasmine
+* Devise 3.4.1
+* Rspec, Capybara, and Guard
+* Faker 1.4.3
+* CSS, SASS, and Bootstrap
 
-##User stories
+## Completed user stories
 
 1) Unauthorized users can use timer (data will not be saved) so that they can time how long they want to work or take a break.
 
@@ -35,6 +39,8 @@ Files composing the app can be found at [Lydia's GitHub] (https://github.com/lyd
 
 10) Authorized users can view number of pomodoros completed over time so that they can track their progress and trends.
 
+## Pending user stories
+
 11) Authorized users can become team leaders with special permissions so that they can set tasks for users on their team.
 
 12) Team leaders can invite users to join their team so that users can pull tasks and so that team leader can track users' progress.
@@ -48,5 +54,5 @@ Files composing the app can be found at [Lydia's GitHub] (https://github.com/lyd
 Thank you to our instructors and classmates at GA WDI3 (DC) for your patience and detailed instruction.
 
 ##Contact
-If you have questions about how this website was built, or suggestions for how it could be improved, please contact ...
+If you have questions about how this website was built, or suggestions for how it could be improved, please contact [Steven Fleming](https://github.com/flemdizzle) (Angular), [Brandon Ehrgood](https://github.com/behrgood) (Angular), [Adrien Kalombo](https://github.com/Adrienkalombo) (testing), or [Lydia Animosa](https://github.com/lydianimosa) (CSS).
 
