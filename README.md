@@ -4,7 +4,7 @@
 Tomatodoro is a pomodoro-style timer that helps you manage your time and to do list and provides information about your trends through data visualization. It was created as the second (group) project at General Assembly's Web Development Immersive 3 in Washington, DC.
 
 ##Documentation
-Files composing the app can be found at [Lydia's GitHub](https://github.com/lydianimosa/pomodoro). The site is also on [Heroku](https://team-rock.herokuapp.com/timer).
+Files composing the app can be found at [Lydia's GitHub](https://github.com/lydianimosa/pomodoro). The site is also on [Heroku](https://team-rock.herokuapp.com/).
 
 ##Technologies used
 * Ruby 2.1.2
