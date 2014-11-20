@@ -1,25 +1,27 @@
 .foot {
-
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 0;
 }
-#header {
-    background: #2D2D2E;
+#footer {
+    background: hsla(0, 0%, 11%, 1);
+    opacity: .97;
 /*    float: right;*/
     height: 40px;
     width: 100%;
     position: relative;
-    padding: 20px;
 }
 
 #menu-trigger {
     position: relative;
-    background: black;
+    background: hsla(0, 0%, 9%, 1);
     box-shadow: inset 0 0 5px #333;
     color: #eee;
     float: right;
-    font-size: .75em;
+    font-size: 1em;
     font-weight: bold;
-    padding: 10px 40px 10px 20px;
-    ;
+    padding: 10px 40px 10px 40px;
     text-decoration: none;
     border-radius: 5px;
     -moz-border-radius: 5px;

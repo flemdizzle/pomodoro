@@ -13,7 +13,7 @@
              <span>{{task.task}}</span>
              <button ng-click="deleteTask(task.id)">&times;</button>
            </li>
-           </div>
+      </div>
       <li class='testing' ng-hide="hide" ng-repeat="task in tasks | orderBy : reverse" type="none">
         <!-- This ng-click updates checked status -->
         <input type="checkbox" ng-model="task.complete" ng-click="update(task.id, task)">
@@ -25,8 +25,8 @@
     <p>total number of tasks: {{tasks.length}}</p>
     <br />
     <%= render "modal" %>
-    <%= render "graph" %>
   </div>
+    <%= render "slideup" %>
 </div>
 
 <script type="text/javascript">
