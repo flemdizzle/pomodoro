@@ -63,9 +63,9 @@ CountDown.fn.updateCanvasColor = function() {
   }
 };
 
-CountDown.fn.updateBarWidth = function() {
-  this.bar.style.width = (this.elapsedTime / this.time * 100) + '%';
-};
+// CountDown.fn.updateBarWidth = function() {
+//   this.bar.style.width = (this.elapsedTime / this.time * 100) + '%';
+// };
 
 CountDown.fn.checkFinalTime = function() {
   if (this.remainingTime === 11) {

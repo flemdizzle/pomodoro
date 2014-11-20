@@ -24,7 +24,9 @@ body {
   float: right;
   color: white;
   font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 22px;
+  font-size: 18px;
+  margin-right: 100px;
+  margin-top: 20px;
 }
 
 .notice {
@@ -52,4 +54,11 @@ a:hover {
 p {
   color: white;
 }
+
+.logo img{
+  width: 240px;
+  margin-left: 80px;
+  margin-top: -20px;
+}
+
 
