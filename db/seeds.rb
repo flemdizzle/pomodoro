@@ -13,17 +13,19 @@ def time_gen
   return Faker::Time.backward(7, :day)
 end
 
-def combine_task_and_date
+def combine_task_and_date(complete_status, amount)
   output =[]
-  50.times do
-    output << {task: "#{task_gen}", updated_at: "#{time_gen}", complete: true}
+  amount.times do
+    output << {task: "#{task_gen}", updated_at: "#{time_gen}", complete: complete_status}
   end
   return output
 end
 
 Task.destroy_all
 
-Task.create!(combine_task_and_date)
+Task.create!(combine_task_and_date(true, 50))
+Task.create!(combine_task_and_date(false, 7))
+
 
 
 
