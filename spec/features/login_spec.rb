@@ -1,37 +1,65 @@
+require "rails_helper"
+
+# describe "landing page " do
+#   it "should have a timer" do
+#     visit '/'
+#     expect(page).to have_content('sign in')
+#   end
+# end
+
+# describe "landing page" do
+#   it "should have launch modal" do
+#     visit '/'
+#     expect(page).to have_content()
+#   end
+# end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Write loging capybara here
-require 'spec_helper'
+# require 'rails_helper'
 
-describe 'user signs up ' do
-  it 'user should go to Welcome to Pomodoro App' do
-
-    within("#session") do
-      fill_in 'Email', :with => 'user@example.com'
-      fill_in 'password', :with => 'password'
-      click_button('sign in')
-    end
-  end
-end
+# describe ' #login' do
+#   describe 'user should be able to log in' do
+#     it 'should take user to the log in tab' do
+#     end
+#   end
+# end
 
 
-describe 'user creates taks' do
-  it 'should take user to task listing' do
-  end
-end
+# describe 'user creates a task' do
+#   it 'should take user to task listing' do
+#   end
+# end
 
-describe 'user log in and out' do
-  it 'should take user to the welcome page' do
-  end
-end
-
-
-describe 'user can use timer' do
-  it 'user can only have timer to 25 minutes'do
-  end
-end
-
-
-
-
-
-
+# describe 'user logs in and out' do
+#   it 'should take user to the welcome page' do
+#   end
+# end
