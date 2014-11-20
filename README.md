@@ -11,7 +11,7 @@ Files composing the app can be found at [Lydia's GitHub] (https://github.com/lyd
 * Ruby on Rails 4.1.6
 * PostgreSQL 9.3.5
 * Authentication by [Devise] (https://github.com/plataformatec/devise)
-* Testing Rspec, capybara, and Jasmine
+* Testing Rspec, capybara, Guard, selenium-webdriver and Jasmine
 
 ##User stories
 
