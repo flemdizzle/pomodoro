@@ -11,12 +11,12 @@
         <!-- This ng-click updates checked status -->
         <input type="checkbox" ng-model="task.complete" ng-click="update(task.id, task)">
         <span class="done-{{task.complete}}">{{task.task}}</span>
-        <button ng-click="deleteTask(task.id); hide=true">&times;</button>
+        <button ng-click="deleteTask(task.id, task.task); hide=true">&times;</button>
       </li>
        <li type="none" ng-show="task.task.length > 0">
          <input type="checkbox">
          <span>{{task.task}}</span>
-         <button ng-click="deleteTask(task.id)">&times;</button>
+         <button ng-click="deleteTask(task.id, task.task)">&times;</button>
        </li>
     </ul>
     <br />
