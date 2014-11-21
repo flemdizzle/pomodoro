@@ -57,7 +57,6 @@ myApp.controller("TaskListCtrl", ['$scope', '$resource', 'Tasks', 'Task', '$loca
                     $scope.tasks.splice(i, 1);
                 }
             };
-            console.log($scope.tasks);
         };
         $scope.save = function() {
                 Tasks.create({
