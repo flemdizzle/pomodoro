@@ -7,19 +7,17 @@
       <!-- <br>{{task.task}} -->
     </form>
     <ul>
-      <div ng-show="task.task.length > 0">
-           <li type="none">
-             <input type="checkbox">
-             <span>{{task.task}}</span>
-             <button ng-click="deleteTask(task.id)">&times;</button>
-           </li>
-      </div>
-      <li class='testing' ng-hide="hide" ng-repeat="task in tasks | orderBy : reverse" type="none">
+      <li class='testing' ng-hide="hide" ng-repeat="task in tasks" type="none">
         <!-- This ng-click updates checked status -->
         <input type="checkbox" ng-model="task.complete" ng-click="update(task.id, task)">
         <span class="done-{{task.complete}}">{{task.task}}</span>
         <button ng-click="deleteTask(task.id); hide=true">&times;</button>
       </li>
+       <li type="none" ng-show="task.task.length > 0">
+         <input type="checkbox">
+         <span>{{task.task}}</span>
+         <button ng-click="deleteTask(task.id)">&times;</button>
+       </li>
     </ul>
     <br />
     <p>total number of tasks: {{tasks.length}}</p>
