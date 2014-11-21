@@ -89,7 +89,6 @@ CountDown.fn.init = function() {
     this.updateCounters();
     this.updateDisplay();
     this.updateCanvasColor();
-    this.updateBarWidth();
     this.checkFinalTime();
   }.bind(this), 1000);
   $('.timer-button').hide();
@@ -98,5 +97,5 @@ CountDown.fn.init = function() {
 
 
 
-new CountDown(document.querySelector('.canvas'), 20);
+new CountDown(document.querySelector('.canvas'), 600);
 });

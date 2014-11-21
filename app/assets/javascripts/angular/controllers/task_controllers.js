@@ -66,6 +66,9 @@ myApp.controller("TaskListCtrl", ['$scope', '$resource', 'Tasks', 'Task', '$loca
             task: task
             });
         };
+        // $scope.fixThings = function(){
+        //     $appl($scope.tasks = Tasks.query());
+        // };
 
     }
 ]);
