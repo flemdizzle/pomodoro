@@ -44,7 +44,6 @@ myApp.controller("TaskListCtrl", ['$scope', '$resource', 'Tasks', 'Task', '$loca
         $scope.tasks = [];
         $scope.loadTask = function(){
             $scope.tasks.push(Tasks.query());
-            console.log($scope.tasks);
         };
         $scope.loadTask();
         $scope.tasks = Tasks.query(); //it's getting Task collection
@@ -56,13 +55,17 @@ myApp.controller("TaskListCtrl", ['$scope', '$resource', 'Tasks', 'Task', '$loca
                 if($scope.tasks[i]["task"] === task) {
                     $scope.tasks.splice(i, 1);
                 }
-            };
+            }
         };
         $scope.save = function() {
                 Tasks.create({
                     task: $scope.task
                 });
-                $scope.tasks.push($scope.task);
+                var thing = Tasks.query();
+                // debugger;
+                thing.$promise.then(function(data){
+                    $scope.tasks.push(data[data.length - 1]);
+                });
                 $scope.task = {};
         };
         $scope.update = function(id, task){
