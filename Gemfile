@@ -35,18 +35,16 @@ gem 'spring',        group: :development
 
 # Testing (for Jasmine, CMD <rake jasmine> and go to localhost:8888)
 # More Jasmine help here: https://github.com/pivotal/jasmine-gem)
-group :development, :test do
-  gem 'rspec-rails'
-  gem 'jasmine'
-  gem 'guard-rspec', require: false
-end
 
 group :test do
-  gem 'capybara', require: false
-  gem 'selenium-webdriver', require: false
+  gem 'capybara'
+  gem 'rspec-rails'
+  gem 'simplecov'
 end
 
-
+group :test, :development do
+  gem 'jasmine-rails'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -62,7 +62,6 @@ myApp.controller("TaskListCtrl", ['$scope', '$resource', 'Tasks', 'Task', '$loca
                     task: $scope.task
                 });
                 var thing = Tasks.query();
-                // debugger;
                 thing.$promise.then(function(data){
                     $scope.tasks.push(data[data.length - 1]);
                 });
@@ -74,9 +73,6 @@ myApp.controller("TaskListCtrl", ['$scope', '$resource', 'Tasks', 'Task', '$loca
             task: task
             });
         };
-        // $scope.fixThings = function(){
-        //     $appl($scope.tasks = Tasks.query());
-        // };
 
     }
 ]);
