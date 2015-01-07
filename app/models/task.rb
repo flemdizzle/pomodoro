@@ -4,7 +4,5 @@ class Task < ActiveRecord::Base
 	scope :not_complete, -> {where(complete: false)}
 	scope :complete, -> {where(complete: true)}
 
-  def butts
-    "butts"
-  end
+
 end
