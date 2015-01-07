@@ -61,6 +61,7 @@ myApp.controller("TaskListCtrl", ['$scope', '$resource', 'Tasks', 'Task', '$loca
                 Tasks.create({
                     task: $scope.task
                 });
+                // need to only do the following if save is successful
                 var thing = Tasks.query();
                 thing.$promise.then(function(data){
                     $scope.tasks.push(data[data.length - 1]);
